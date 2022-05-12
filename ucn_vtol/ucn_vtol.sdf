@@ -6,7 +6,7 @@
     <link name='base_link'>
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0.2 0 0 0</pose>
         <mass>9</mass>
         <inertia>
           <ixx>1.835</ixx>
@@ -93,7 +93,7 @@
     </joint>
     <include>
       <uri>model://airspeed</uri>
-      <pose>0.72 0 0.26 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <name>airspeed</name>
       <axis>
         <xyz>1 0 0</xyz>
@@ -553,7 +553,7 @@
         </material>
       </visual>
     </link>
-    <joint name='left_alieron_joint' type='revolute'>
+    <joint name='left_aileron_joint' type='revolute'>
       <parent>base_link</parent>
       <child>left_aileron</child>
       <pose>-0.72 0.98 0.05 0 0 0</pose>
@@ -647,17 +647,17 @@
       <parent>base_link</parent>
     </joint>
     <plugin name="left_wing_lift" filename="libLiftDragPlugin.so">
-      <a0>0.0523599</a0>
-      <cla>8.36518</cla>
-      <cda>1.63124439</cda>
+      <a0>0.261799</a0>
+      <cla>6.212</cla>
+      <cda>0.01364</cda>
       <cma>0.0</cma>
-      <alpha_stall>0.148353</alpha_stall>
-      <cla_stall>-5.729575</cla_stall>
-      <cda_stall>0.80214</cda_stall>
+      <alpha_stall>0.52356</alpha_stall>
+      <cla_stall>-0.6532</cla_stall>
+      <cda_stall>0.84912</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.05 0.3 0.05</cp>
-      <area>0.3875</area>
-      <air_density>1.2041</air_density>
+      <cp>-0.05 0.4 0.05</cp>
+      <area>0.388</area>
+      <air_density>1.225</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
@@ -669,39 +669,39 @@
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
     <plugin name="right_wing_lift" filename="libLiftDragPlugin.so">
-      <a0>0.0523599</a0>
-      <cla>8.36518</cla>
-      <cda>1.63124439</cda>
+      <a0>0.261799</a0>
+      <cla>6.212</cla>
+      <cda>0.01364</cda>
       <cma>0.0</cma>
-      <alpha_stall>0.148353</alpha_stall>
-      <cla_stall>-5.729575</cla_stall>
-      <cda_stall>0.80214</cda_stall>
+      <alpha_stall>0.52356</alpha_stall>
+      <cla_stall>-0.6532</cla_stall>
+      <cda_stall>0.84912</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.05 -0.3 0.05</cp>
-      <area>0.3875</area>
-      <air_density>1.2041</air_density>
+      <cp>-0.05 0.4 0.05</cp>
+      <area>0.388</area>
+      <air_density>1.225</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
       <control_joint_name>
-        right_elevon_joint
+        right_aileron_joint
       </control_joint_name>
       <control_joint_rad_to_cl>-1.0</control_joint_rad_to_cl>
       <robotNamespace></robotNamespace>
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
     <plugin name="elevator_lift" filename="libLiftDragPlugin.so">
-      <a0>0.0523599</a0>
-      <cla>8.36518</cla>
-      <cda>1.63124439</cda>
+      <a0>0.261799</a0>
+      <cla>6.212</cla>
+      <cda>0.01364</cda>
       <cma>0.0</cma>
-      <alpha_stall>0.148353</alpha_stall>
-      <cla_stall>-5.729575</cla_stall>
-      <cda_stall>0.80214</cda_stall>
+      <alpha_stall>0.52356</alpha_stall>
+      <cla_stall>-0.6532</cla_stall>
+      <cda_stall>0.84912</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.05 -0.3 0.05</cp>
+      <cp>-0.05 0.4 0.05</cp>
       <area>0.174</area>
-      <air_density>1.2041</air_density>
+      <air_density>1.225</air_density>
       <forward>1 0 0</forward>
       <upward>0 0 1</upward>
       <link_name>base_link</link_name>
@@ -713,20 +713,23 @@
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
     <plugin name="rudder_lift" filename="libLiftDragPlugin.so">
-      <a0>0.0523599</a0>
-      <cla>8.36518</cla>
-      <cda>1.63124439</cda>
-      <cma>0.0.</cma>
-      <alpha_stall>0.148353</alpha_stall>
-      <cla_stall>-5.729575</cla_stall>
-      <cda_stall>0.80214</cda_stall>
+      <a0>0.261799</a0>
+      <cla>6.212</cla>
+      <cda>0.01364</cda>
+      <cma>0.0</cma>
+      <alpha_stall>0.52356</alpha_stall>
+      <cla_stall>-0.6532</cla_stall>
+      <cda_stall>0.84912</cda_stall>
       <cma_stall>0</cma_stall>
-      <cp>-0.05 -0.3 0.05</cp>
+      <cp>-0.05 0.4 0.05</cp>
       <area>0.06</area>
-      <air_density>1.2041</air_density>
+      <air_density>1.225</air_density>
       <forward>1 0 0</forward>
       <upward>0 1 0</upward>
       <link_name>base_link</link_name>
+      <control_joint_name>
+        rudder_joint
+      </control_joint_name>
       <robotNamespace></robotNamespace>
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
@@ -737,12 +740,12 @@
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>8057</maxRotVelocity>
-      <motorConstant>0.0004028</motorConstant>
-      <momentConstant>0.025</momentConstant>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>0</motorNumber>
-      <rotorDragCoefficient>2.62e-11</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000106428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
@@ -754,12 +757,12 @@
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>8057</maxRotVelocity>
-      <motorConstant>0.0004028</motorConstant>
-      <momentConstant>0.025</momentConstant>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>1</motorNumber>
-      <rotorDragCoefficient>2.62e-11</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000106428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
@@ -771,12 +774,12 @@
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>8057</maxRotVelocity>
-      <motorConstant>0.0004028</motorConstant>
-      <momentConstant>0.025</momentConstant>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>2</motorNumber>
-      <rotorDragCoefficient>2.62e-11</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000106428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
@@ -788,13 +791,12 @@
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>8057</maxRotVelocity>
-      <motorConstant>0.0004028</motorConstant>
-      <momentConstant>0.025</momentConstant>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>2e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>3</motorNumber>
-      <rotorDragCoefficient>2.62e-11</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000106428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
@@ -803,15 +805,15 @@
       <robotNamespace></robotNamespace>
       <jointName>rotor_puller_joint</jointName>
       <linkName>rotor_puller</linkName>
-      <turningDirection>ccw</turningDirection>
-      <timeConstantUp>0.02</timeConstantUp>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
-      <maxRotVelocity>8720.41</maxRotVelocity>
-      <motorConstant>0.32676</motorConstant>
-      <momentConstant>0.02</momentConstant>
+      <maxRotVelocity>5500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.01</momentConstant>
       <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
       <motorNumber>4</motorNumber>
-      <rotorDragCoefficient>3.9255e-11</rotorDragCoefficient>
+      <rotorDragCoefficient>0.000106428</rotorDragCoefficient>
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
@@ -924,6 +926,15 @@
           <zero_position_armed>0</zero_position_armed>
           <joint_control_type>position_kinematic</joint_control_type>
           <joint_name>elevator_joint</joint_name>
+        </channel>
+        <channel name="rudder">
+          <input_index>8</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position_kinematic</joint_control_type>
+          <joint_name>rudder_joint</joint_name>
         </channel>
       </control_channels>
     </plugin>
