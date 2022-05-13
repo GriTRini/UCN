@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<!-- DO NOT EDIT: Generated from standard_vtol.sdf.jinja -->
 <sdf version='1.5'>
-  <model name='ucn_vtol'>
+  <model name='ucn'>
     <pose>0 0 0.246 0 0 0</pose>
     <link name='base_link'>
       <pose>0 0 0 0 0 0</pose>
@@ -29,7 +28,7 @@
             <ode>
               <kp>100000</kp>
               <kd>1.0</kd>
-              <max_vel>0.1</max_vel>
+              <max_vel>10</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
           </contact>
@@ -43,7 +42,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://standard_vtol/meshes/ucn_vtol.stl</uri>
+            <uri>model://standard_vtol/meshes/ucn.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -58,7 +57,7 @@
       <self_collide>0</self_collide>
     </link>
     
-    <link name='ucn_vtol/imu_link'>
+    <link name='ucn/imu_link'>
       <pose>0 0 0.21 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -73,8 +72,8 @@
         </inertia>
       </inertial>
     </link>
-    <joint name='ucn_vtol/imu_joint' type='revolute'>
-      <child>ucn_vtol/imu_link</child>
+    <joint name='ucn/imu_joint' type='revolute'>
+      <child>ucn/imu_link</child>
       <parent>base_link</parent>
       <axis>
         <xyz>1 0 0</xyz>
@@ -103,6 +102,7 @@
       <child>airspeed::link</child>
       <parent>base_link</parent>
     </joint>
+
     <link name='rotor_0'>
       <pose>0.4 -0.375 0.18 0 0 0</pose>
       <inertial>
@@ -170,7 +170,7 @@
       </axis>
     </joint>
     <link name='rotor_1'>
-      <pose>-0.435 0.375 0.18 0 0 0</pose>
+      <pose>-0.4 0.375 0.18 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>0.005</mass>
@@ -367,7 +367,6 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-
     <link name='rotor_puller'>
       <pose>0.67 0 0.207 0 1.57 0</pose>
       <inertial>
@@ -646,7 +645,7 @@
       <child>gps::link</child>
       <parent>base_link</parent>
     </joint>
-    <plugin name="left_wing_lift" filename="libLiftDragPlugin.so">
+    <plugin name="left_aileron" filename="libLiftDragPlugin.so">
       <a0>0.261799</a0>
       <cla>6.212</cla>
       <cda>0.01364</cda>
@@ -668,7 +667,7 @@
       <robotNamespace></robotNamespace>
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
-    <plugin name="right_wing_lift" filename="libLiftDragPlugin.so">
+    <plugin name="right_aileron" filename="libLiftDragPlugin.so">
       <a0>0.261799</a0>
       <cla>6.212</cla>
       <cda>0.01364</cda>
@@ -690,7 +689,7 @@
       <robotNamespace></robotNamespace>
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
-    <plugin name="elevator_lift" filename="libLiftDragPlugin.so">
+    <plugin name="elevator" filename="libLiftDragPlugin.so">
       <a0>0.261799</a0>
       <cla>6.212</cla>
       <cda>0.01364</cda>
@@ -712,7 +711,7 @@
       <robotNamespace></robotNamespace>
       <windSubTopic>world_wind</windSubTopic>
     </plugin>
-    <plugin name="rudder_lift" filename="libLiftDragPlugin.so">
+    <plugin name="rudder" filename="libLiftDragPlugin.so">
       <a0>0.261799</a0>
       <cla>6.212</cla>
       <cda>0.01364</cda>
@@ -940,7 +939,7 @@
     </plugin>
     <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
       <robotNamespace></robotNamespace>
-      <linkName>ucn_vtol/imu_link</linkName>
+      <linkName>ucn/imu_link</linkName>
       <imuTopic>/imu</imuTopic>
       <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
       <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
